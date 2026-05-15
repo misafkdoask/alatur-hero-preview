@@ -580,8 +580,8 @@
     }
     .section-about {
       background:
-        radial-gradient(ellipse 70% 60% at 30% 50%, rgba(232, 222, 200, 0.45) 0%, rgba(232, 222, 200, 0) 65%),
-        radial-gradient(ellipse 50% 80% at 90% 50%, rgba(220, 205, 178, 0.32) 0%, rgba(220, 205, 178, 0) 60%),
+        radial-gradient(ellipse 65% 70% at 25% 50%, rgba(208, 188, 152, 0.55) 0%, rgba(208, 188, 152, 0) 70%),
+        radial-gradient(ellipse 55% 85% at 95% 55%, rgba(195, 170, 130, 0.42) 0%, rgba(195, 170, 130, 0) 65%),
         var(--cream);
     }
     .section-inner {
@@ -591,8 +591,8 @@
     }
     .about-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr);
-      gap: clamp(2.5rem, 5vw, 5rem);
+      grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.3fr);
+      gap: clamp(5rem, 10vw, 10rem);
       align-items: center;
     }
     .about-text {
@@ -704,6 +704,274 @@
       background: var(--cream-warm);
     }
 
+    /* ===== Block 3 - Destinations (placeholder) ===== */
+    .section-destinations-stub {
+      padding: clamp(3rem, 5vw, 4.5rem) 0;
+      background: var(--cream);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .stub-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      text-align: center;
+    }
+    .stub-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: var(--burgundy);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .stub-eyebrow .star {
+      width: 11px;
+      height: 11px;
+      color: var(--burgundy);
+    }
+    .stub-title {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+      color: var(--ink);
+      margin: 0;
+      letter-spacing: -0.005em;
+    }
+    .stub-note {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin: 0;
+    }
+
+    /* ===== Block 4 - Tours ===== */
+    .section-tours {
+      background:
+        radial-gradient(ellipse 70% 60% at 8% 12%, rgba(208, 188, 152, 0.30) 0%, rgba(208, 188, 152, 0) 70%),
+        radial-gradient(ellipse 55% 65% at 92% 92%, rgba(195, 170, 130, 0.26) 0%, rgba(195, 170, 130, 0) 70%),
+        var(--cream);
+      padding: clamp(4rem, 8vw, 8rem) 0;
+      overflow: hidden;
+    }
+    .tours-heading {
+      max-width: 50rem;
+      margin: 0 auto clamp(3rem, 5vw, 4.5rem);
+      text-align: center;
+      padding: 0 var(--pad-x);
+    }
+    .tours-heading .eyebrow {
+      justify-content: center;
+      margin-bottom: 1.3rem;
+    }
+    .tours-headline {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      line-height: 1.06;
+      letter-spacing: -0.008em;
+      color: var(--ink);
+      margin: 0 0 1.2rem;
+    }
+    .tours-subtitle {
+      font-size: clamp(1rem, 1.1vw, 1.15rem);
+      font-weight: 400;
+      line-height: 1.55;
+      color: var(--ink-body);
+      margin: 0 auto;
+      max-width: 40rem;
+    }
+
+    .tours-carousel-wrap {
+      position: relative;
+      margin: 0 auto;
+      max-width: var(--maxw);
+      padding: 0 var(--pad-x);
+    }
+    .tours-carousel {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 1.5rem;
+      scroll-padding-left: var(--pad-x);
+      scroll-padding-right: var(--pad-x);
+    }
+    .tours-carousel::-webkit-scrollbar { display: none; }
+    .tour-card {
+      flex: 0 0 calc(88% - 0.75rem);
+      max-width: 1100px;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--cream-warm);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.5) inset,
+        0 30px 60px -30px rgba(42, 47, 68, 0.22);
+    }
+    .tour-card-media {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      background: var(--cream-warm);
+      overflow: hidden;
+    }
+    .tour-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .tour-card-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg,
+          rgba(247, 244, 236, 0.06) 0%,
+          rgba(247, 244, 236, 0) 35%,
+          rgba(42, 47, 68, 0.10) 100%);
+      pointer-events: none;
+    }
+    .tour-card-content {
+      padding: clamp(2rem, 3vw, 3.2rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.1rem;
+    }
+    .tour-card-number {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--burgundy);
+      letter-spacing: 0.2em;
+      margin: 0;
+    }
+    .tour-card-title {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+      line-height: 1.1;
+      letter-spacing: -0.005em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .tour-card-body {
+      font-size: clamp(0.96rem, 1.02vw, 1.08rem);
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--ink-body);
+      margin: 0;
+    }
+    .tour-card-markers {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.42rem 1.05rem;
+      margin: 0.2rem 0 0;
+    }
+    .tour-card-markers .marker {
+      font-size: 0.74rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--ink-body);
+      white-space: nowrap;
+      position: relative;
+    }
+    .tour-card-markers .marker:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: -0.56rem;
+      top: 50%;
+      width: 3px;
+      height: 3px;
+      margin-top: -1.5px;
+      border-radius: 999px;
+      background: var(--burgundy);
+      opacity: 0.45;
+    }
+    .tour-card-content .btn-secondary {
+      margin-top: 0.6rem;
+      align-self: flex-start;
+    }
+
+    /* Carousel arrows */
+    .tours-arrow {
+      position: absolute;
+      top: calc(50% - 0.75rem);
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      background: var(--cream);
+      border: 1px solid var(--line-strong);
+      color: var(--ink);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+      transition: background 0.2s ease, transform 0.15s ease, opacity 0.2s ease;
+      box-shadow: 0 10px 24px -10px rgba(42, 47, 68, 0.28);
+    }
+    .tours-arrow:hover { background: var(--cream-warm); }
+    .tours-arrow:active { transform: translateY(-50%) scale(0.94); }
+    .tours-arrow-prev { left: max(0.5rem, calc(var(--pad-x) - 1.5rem)); }
+    .tours-arrow-next { right: max(0.5rem, calc(var(--pad-x) - 1.5rem)); }
+    .tours-arrow svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .tours-arrow[disabled] { opacity: 0.28; cursor: not-allowed; }
+
+    /* Dots */
+    .tours-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.4rem;
+      padding: 0 var(--pad-x);
+    }
+    .tours-dot {
+      width: 28px;
+      height: 3px;
+      background: var(--line-strong);
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      padding: 0;
+      opacity: 0.5;
+      transition: opacity 0.25s ease, background 0.25s ease, width 0.25s ease;
+    }
+    .tours-dot:hover { opacity: 0.85; }
+    .tours-dot.is-active {
+      opacity: 1;
+      background: var(--burgundy);
+      width: 56px;
+    }
+
     @media (max-width: 900px) {
       .about-grid {
         grid-template-columns: 1fr;
@@ -714,6 +982,29 @@
       .about-headline {
         font-size: clamp(2rem, 8vw, 2.8rem);
       }
+
+      /* Block 4 mobile */
+      .tour-card {
+        flex: 0 0 calc(90% - 0.5rem);
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+      }
+      .tour-card-media {
+        aspect-ratio: 4 / 5;
+      }
+      .tour-card-content {
+        padding: 1.6rem 1.4rem 2rem;
+        gap: 0.95rem;
+      }
+      .tour-card-title {
+        font-size: clamp(1.5rem, 6.5vw, 2rem);
+      }
+      .tours-arrow {
+        width: 40px;
+        height: 40px;
+      }
+      .tours-arrow-prev { left: 0.4rem; }
+      .tours-arrow-next { right: 0.4rem; }
     }
   </style>
 </head>
@@ -900,6 +1191,214 @@
     </div>
   </section>
 
+  <section class="section-destinations-stub" id="destinations" aria-labelledby="destinations-stub-title">
+    <div class="stub-inner">
+      <div class="stub-eyebrow">
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 0 L13.4 9 L22 11 L13.4 13.5 L12 24 L10.6 13.5 L2 11 L10.6 9 Z M12 4 L18 12 L12 20 L6 12 Z" fill-rule="evenodd"/>
+        </svg>
+        <span>Направления</span>
+      </div>
+      <h2 id="destinations-stub-title" class="stub-title">Въездной и&nbsp;выездной туризм</h2>
+      <p class="stub-note">Раздел в&nbsp;разработке</p>
+    </div>
+  </section>
+
+  <section class="section section-tours" id="tours" aria-labelledby="tours-headline">
+    <header class="tours-heading">
+      <div class="eyebrow">
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 0 L13.4 9 L22 11 L13.4 13.5 L12 24 L10.6 13.5 L2 11 L10.6 9 Z M12 4 L18 12 L12 20 L6 12 Z" fill-rule="evenodd"/>
+        </svg>
+        <span>Туры и&nbsp;международные программы</span>
+      </div>
+      <h2 id="tours-headline" class="tours-headline">
+        Авторские путешествия и&nbsp;международные программы
+      </h2>
+      <p class="tours-subtitle">
+        Премиальные маршруты, деловые поездки, образовательные проекты и&nbsp;международные события в&nbsp;России и&nbsp;странах&nbsp;БРИКС.
+      </p>
+    </header>
+
+    <div class="tours-carousel-wrap">
+      <button type="button" class="tours-arrow tours-arrow-prev" aria-label="Предыдущая карточка">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6 L9 12 L15 18"/></svg>
+      </button>
+
+      <div class="tours-carousel" id="tours-carousel" tabindex="0" aria-roledescription="карусель" aria-label="Туры и международные программы">
+        <article class="tour-card" aria-labelledby="tour-1-title">
+          <div class="tour-card-media">
+            <img src="./block-4/out/card-1-research_seed1.png" alt="Двое международных делегатов в частной библиотеке исследовательского центра, золотой час" loading="lazy">
+          </div>
+          <div class="tour-card-content">
+            <p class="tour-card-number">01</p>
+            <h3 id="tour-1-title" class="tour-card-title">Научно-образовательный туризм</h3>
+            <p class="tour-card-body">
+              Программы, объединяющие путешествия, образование и&nbsp;международный обмен: ведущие вузы России, научные центры, лаборатории, образовательные форумы и&nbsp;профессиональные программы для студентов, специалистов и&nbsp;корпоративных команд.
+            </p>
+            <div class="tour-card-markers">
+              <span class="marker">университеты</span>
+              <span class="marker">научные центры</span>
+              <span class="marker">лаборатории</span>
+              <span class="marker">образовательные форумы</span>
+              <span class="marker">международные обмены</span>
+              <span class="marker">повышение квалификации</span>
+              <span class="marker">корпоративное обучение</span>
+              <span class="marker">профессиональные стажировки</span>
+              <span class="marker">культурно-познавательные маршруты</span>
+            </div>
+            <a href="#contacts" class="btn btn-secondary">
+              Подробнее
+              <span class="btn-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17 L17 7"/>
+                  <path d="M8.5 7 H17 V15.5"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </article>
+
+        <article class="tour-card" aria-labelledby="tour-2-title">
+          <div class="tour-card-media">
+            <img src="./block-4/out/card-2-wellness_seed1.png" alt="Премиальный wellness-салон с травертиновыми стенами, отражающим бассейном и фигурой в льняном халате" loading="lazy">
+          </div>
+          <div class="tour-card-content">
+            <p class="tour-card-number">02</p>
+            <h3 id="tour-2-title" class="tour-card-title">Медицинские и&nbsp;оздоровительные программы</h3>
+            <p class="tour-card-body">
+              Организация диагностики, лечения и&nbsp;premium wellness-программ в&nbsp;ведущих клиниках и&nbsp;санаторно-курортных комплексах России.
+            </p>
+            <div class="tour-card-markers">
+              <span class="marker">check-up программы</span>
+              <span class="marker">кардиология</span>
+              <span class="marker">опорно-двигательная система</span>
+              <span class="marker">мужское здоровье</span>
+              <span class="marker">женское здоровье</span>
+              <span class="marker">реабилитация</span>
+              <span class="marker">wellness &amp; spa</span>
+              <span class="marker">санаторное восстановление</span>
+              <span class="marker">премиальная диагностика</span>
+            </div>
+            <a href="#contacts" class="btn btn-secondary">
+              Подробнее
+              <span class="btn-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17 L17 7"/>
+                  <path d="M8.5 7 H17 V15.5"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </article>
+
+        <article class="tour-card" aria-labelledby="tour-3-title">
+          <div class="tour-card-media">
+            <img src="./block-4/out/card-3-business_v4_seed1.png" alt="Двое международных деловых путешественников в премиальном клубном лаунже с видом на исторический город в золотой час" loading="lazy">
+          </div>
+          <div class="tour-card-content">
+            <p class="tour-card-number">03</p>
+            <h3 id="tour-3-title" class="tour-card-title">Business Leisure &amp;&nbsp;Деловой туризм</h3>
+            <p class="tour-card-body">
+              Организация международных бизнес-поездок, деловых встреч, форумов и&nbsp;конференций с&nbsp;premium-сервисом, индивидуальным сопровождением и&nbsp;совмещением работы, отдыха и&nbsp;культурной программы.
+            </p>
+            <div class="tour-card-markers">
+              <span class="marker">business leisure</span>
+              <span class="marker">бизнес-миссии</span>
+              <span class="marker">деловые встречи</span>
+              <span class="marker">конференции</span>
+              <span class="marker">корпоративные выезды</span>
+              <span class="marker">concierge-service</span>
+              <span class="marker">VIP-сопровождение</span>
+              <span class="marker">безопасность</span>
+              <span class="marker">персональная логистика</span>
+              <span class="marker">культурная программа</span>
+            </div>
+            <a href="#contacts" class="btn btn-secondary">
+              Подробнее
+              <span class="btn-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17 L17 7"/>
+                  <path d="M8.5 7 H17 V15.5"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </article>
+
+        <article class="tour-card" aria-labelledby="tour-4-title">
+          <div class="tour-card-media">
+            <img src="./block-4/out/card-4-family_v4_seed1.png" alt="Семья трёх поколений на черноморской террасе во время неспешного семейного обеда, момент передачи персика" loading="lazy">
+          </div>
+          <div class="tour-card-content">
+            <p class="tour-card-number">04</p>
+            <h3 id="tour-4-title" class="tour-card-title">Семейные путешествия</h3>
+            <p class="tour-card-body">
+              Комфортные маршруты для семейного отдыха с&nbsp;индивидуальным сопровождением, безопасной логистикой и&nbsp;premium-сервисом.
+            </p>
+            <div class="tour-card-markers">
+              <span class="marker">multi-generation travel</span>
+              <span class="marker">семейный отдых</span>
+              <span class="marker">wellness family programs</span>
+              <span class="marker">культурные маршруты</span>
+              <span class="marker">premium family service</span>
+            </div>
+            <a href="#contacts" class="btn btn-secondary">
+              Подробнее
+              <span class="btn-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17 L17 7"/>
+                  <path d="M8.5 7 H17 V15.5"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </article>
+
+        <article class="tour-card" aria-labelledby="tour-5-title">
+          <div class="tour-card-media">
+            <img src="./block-4/out/card-5-event_v4_seed1.png" alt="Частный международный культурный ужин после открытия выставки, трое гостей в живой беседе, тёплое освещение" loading="lazy">
+          </div>
+          <div class="tour-card-content">
+            <p class="tour-card-number">05</p>
+            <h3 id="tour-5-title" class="tour-card-title">Событийный туризм</h3>
+            <p class="tour-card-body">
+              Международные форумы, культурные проекты и&nbsp;авторские события, объединяющие туризм, образование и&nbsp;международное сотрудничество.
+            </p>
+            <div class="tour-card-markers">
+              <span class="marker">Чайный путь</span>
+              <span class="marker">Масленица в&nbsp;Омане</span>
+              <span class="marker">Конгресс молодых учёных</span>
+              <span class="marker">Всемирный молодёжный форум</span>
+              <span class="marker">международные культурные проекты</span>
+            </div>
+            <a href="#contacts" class="btn btn-secondary">
+              Подробнее
+              <span class="btn-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17 L17 7"/>
+                  <path d="M8.5 7 H17 V15.5"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <button type="button" class="tours-arrow tours-arrow-next" aria-label="Следующая карточка">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6 L15 12 L9 18"/></svg>
+      </button>
+    </div>
+
+    <div class="tours-dots" role="tablist" aria-label="Карточки туров">
+      <button type="button" class="tours-dot is-active" aria-label="Карточка 1" data-index="0"></button>
+      <button type="button" class="tours-dot" aria-label="Карточка 2" data-index="1"></button>
+      <button type="button" class="tours-dot" aria-label="Карточка 3" data-index="2"></button>
+      <button type="button" class="tours-dot" aria-label="Карточка 4" data-index="3"></button>
+      <button type="button" class="tours-dot" aria-label="Карточка 5" data-index="4"></button>
+    </div>
+  </section>
+
   <script>
     (function () {
       var burger = document.querySelector('.burger');
@@ -921,6 +1420,64 @@
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') setOpen(false);
       });
+    })();
+
+    (function () {
+      var carousel = document.getElementById('tours-carousel');
+      if (!carousel) return;
+      var wrap = carousel.parentElement;
+      var cards = carousel.querySelectorAll('.tour-card');
+      var dots = document.querySelectorAll('.tours-dot');
+      var prev = wrap.querySelector('.tours-arrow-prev');
+      var next = wrap.querySelector('.tours-arrow-next');
+      if (!cards.length || !prev || !next) return;
+
+      function getActiveIndex() {
+        var carouselLeft = carousel.getBoundingClientRect().left;
+        var best = 0, bestDist = Infinity;
+        cards.forEach(function (card, i) {
+          var cardLeft = card.getBoundingClientRect().left;
+          var dist = Math.abs(cardLeft - carouselLeft);
+          if (dist < bestDist) { bestDist = dist; best = i; }
+        });
+        return best;
+      }
+
+      function scrollToCard(idx, behavior) {
+        if (idx < 0 || idx >= cards.length) return;
+        var card = cards[idx];
+        var carouselRect = carousel.getBoundingClientRect();
+        var cardRect = card.getBoundingClientRect();
+        var delta = cardRect.left - carouselRect.left;
+        carousel.scrollTo({ left: Math.max(0, carousel.scrollLeft + delta), behavior: behavior || 'smooth' });
+      }
+
+      function updateUI() {
+        var idx = getActiveIndex();
+        dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
+        prev.toggleAttribute('disabled', idx === 0);
+        next.toggleAttribute('disabled', idx === cards.length - 1);
+      }
+
+      prev.addEventListener('click', function () { scrollToCard(getActiveIndex() - 1); });
+      next.addEventListener('click', function () { scrollToCard(getActiveIndex() + 1); });
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { scrollToCard(i); });
+      });
+
+      var scrollTimer;
+      carousel.addEventListener('scroll', function () {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(updateUI, 80);
+      });
+
+      carousel.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); scrollToCard(getActiveIndex() - 1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); scrollToCard(getActiveIndex() + 1); }
+      });
+
+      carousel.scrollLeft = 0;
+      updateUI();
     })();
   </script>
 </body>
