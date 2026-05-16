@@ -1248,6 +1248,93 @@
       justify-content: center;
     }
 
+    /* ===== Block 6 - Quote (Putin) ===== */
+    .section-quote {
+      background:
+        radial-gradient(ellipse 55% 60% at 12% 20%, rgba(208, 188, 152, 0.30) 0%, rgba(208, 188, 152, 0) 70%),
+        radial-gradient(ellipse 50% 55% at 90% 80%, rgba(195, 170, 130, 0.24) 0%, rgba(195, 170, 130, 0) 70%),
+        var(--cream);
+      padding: clamp(3.5rem, 7vw, 7rem) 0;
+    }
+    .quote-spread {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: clamp(3rem, 7vw, 7rem);
+      align-items: center;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+    }
+    .quote-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 10px;
+      background: var(--cream-warm);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.5) inset,
+        0 30px 60px -30px rgba(42, 47, 68, 0.25);
+    }
+    .quote-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+    }
+    .quote-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg,
+          rgba(247, 244, 236, 0.05) 0%,
+          rgba(247, 244, 236, 0) 35%,
+          rgba(42, 47, 68, 0.10) 100%);
+      pointer-events: none;
+    }
+    .quote-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 36rem;
+    }
+    .quote-content .eyebrow {
+      margin-bottom: 1.6rem;
+    }
+    .quote-text {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(1.4rem, 2.2vw, 2rem);
+      line-height: 1.24;
+      letter-spacing: -0.005em;
+      color: var(--ink);
+      margin: 0 0 1.6rem;
+    }
+    .quote-text:last-of-type {
+      margin-bottom: 2rem;
+    }
+    .quote-attribution {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-family: var(--font-sans);
+      font-size: 0.86rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+    .quote-attribution::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--burgundy);
+      opacity: 0.7;
+    }
+
     @media (max-width: 900px) {
       .about-grid {
         grid-template-columns: 1fr;
@@ -1293,6 +1380,15 @@
       .mice-cases { grid-template-columns: 1fr; }
       .mice-headline { font-size: clamp(1.7rem, 7vw, 2.2rem); }
       .mice-body { font-size: clamp(0.96rem, 4vw, 1.05rem); }
+
+      /* Block 6 mobile */
+      .quote-spread {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+      .quote-content { max-width: 100%; }
+      .quote-media { max-width: 22rem; aspect-ratio: 4 / 5; }
+      .quote-text { font-size: clamp(1.2rem, 5vw, 1.6rem); }
     }
   </style>
 </head>
@@ -1826,6 +1922,25 @@
       </form>
     </div>
   </dialog>
+
+  <section class="section-quote" id="quote" aria-labelledby="quote-attribution">
+    <div class="quote-spread">
+      <div class="quote-media">
+        <img src="./block-6/out/putin-quote.png" alt="Владимир Путин на пленарном заседании ПМЭФ 2024" loading="lazy">
+      </div>
+      <div class="quote-content">
+        <div class="eyebrow">
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0 L13.4 9 L22 11 L13.4 13.5 L12 24 L10.6 13.5 L2 11 L10.6 9 Z M12 4 L18 12 L12 20 L6 12 Z" fill-rule="evenodd"/>
+          </svg>
+          <span>Цитата</span>
+        </div>
+        <p class="quote-text">«Развитие внутреннего туризма, один из&nbsp;приоритетов нашей долгосрочной стратегии.»</p>
+        <p class="quote-text">«Число поездок с&nbsp;проживанием в&nbsp;отечественных отелях должно увеличиться до&nbsp;140&nbsp;млн человек в&nbsp;год.»</p>
+        <p class="quote-attribution" id="quote-attribution">Владимир Путин, выступление на&nbsp;ПМЭФ 2024</p>
+      </div>
+    </div>
+  </section>
 
   <script>
     (function () {
