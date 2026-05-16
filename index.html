@@ -1067,7 +1067,7 @@
     }
     .mice-block-label {
       font-family: var(--font-sans);
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -1080,23 +1080,23 @@
       padding: 0;
       display: flex;
       flex-direction: column;
-      gap: 0.32rem;
+      gap: 0.4rem;
     }
     .mice-list li {
-      font-size: 0.88rem;
+      font-size: 1.02rem;
       font-weight: 400;
       letter-spacing: 0.01em;
       color: var(--ink-body);
       position: relative;
-      padding-left: 0.95rem;
-      line-height: 1.4;
+      padding-left: 1.1rem;
+      line-height: 1.42;
     }
     .mice-list li::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 0.6em;
-      width: 5px;
+      top: 0.65em;
+      width: 6px;
       height: 1px;
       background: var(--burgundy);
       opacity: 0.6;
@@ -1104,26 +1104,26 @@
     .mice-cases {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 0.42rem;
+      gap: 0.55rem;
     }
     .mice-case {
-      padding: 0.55rem 0.7rem;
+      padding: 0.75rem 0.9rem;
       border: 1px solid var(--line);
-      border-radius: 6px;
+      border-radius: 8px;
       background: rgba(247, 244, 236, 0.45);
     }
     .mice-case-name {
       font-family: var(--font-display);
       font-weight: 300;
-      font-size: 0.92rem;
+      font-size: 1.2rem;
       line-height: 1.18;
       letter-spacing: -0.003em;
       color: var(--ink);
-      margin: 0 0 0.18rem;
+      margin: 0 0 0.25rem;
     }
     .mice-case-descriptor {
       font-family: var(--font-sans);
-      font-size: 0.68rem;
+      font-size: 0.84rem;
       font-weight: 400;
       letter-spacing: 0.01em;
       color: var(--ink-soft);
@@ -1258,8 +1258,8 @@
     }
     .quote-spread {
       display: grid;
-      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-      gap: clamp(3rem, 7vw, 7rem);
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: clamp(3rem, 6vw, 6rem);
       align-items: center;
       max-width: var(--maxw);
       margin: 0 auto;
@@ -1268,7 +1268,7 @@
     .quote-media {
       position: relative;
       width: 100%;
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 1300 / 1160;
       overflow: hidden;
       border-radius: 10px;
       background: var(--cream-warm);
@@ -1312,6 +1312,8 @@
       letter-spacing: -0.005em;
       color: var(--ink);
       margin: 0 0 1.6rem;
+      text-wrap: balance;
+      max-width: 32rem;
     }
     .quote-text:last-of-type {
       margin-bottom: 2rem;
