@@ -972,6 +972,303 @@
       width: 56px;
     }
 
+    /* ===== Block 5 - MICE & Events ===== */
+    .section-mice {
+      background:
+        radial-gradient(ellipse 55% 60% at 88% 8%, rgba(208, 188, 152, 0.28) 0%, rgba(208, 188, 152, 0) 70%),
+        radial-gradient(ellipse 60% 65% at 8% 92%, rgba(195, 170, 130, 0.24) 0%, rgba(195, 170, 130, 0) 70%),
+        var(--cream);
+      padding: clamp(4rem, 8vw, 8rem) 0;
+    }
+    .mice-heading {
+      max-width: 50rem;
+      margin: 0 auto clamp(3rem, 5vw, 4.5rem);
+      text-align: center;
+      padding: 0 var(--pad-x);
+    }
+    .mice-heading .eyebrow {
+      justify-content: center;
+      margin-bottom: 1.3rem;
+    }
+    .mice-headline {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      line-height: 1.06;
+      letter-spacing: -0.008em;
+      color: var(--ink);
+      margin: 0 0 1.2rem;
+    }
+    .mice-subtitle {
+      font-size: clamp(1rem, 1.1vw, 1.15rem);
+      font-weight: 400;
+      line-height: 1.55;
+      color: var(--ink-body);
+      margin: 0 auto;
+      max-width: 40rem;
+    }
+    .mice-spread {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: stretch;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+    }
+    .mice-media {
+      position: relative;
+      aspect-ratio: 2 / 3;
+      overflow: hidden;
+      border-radius: 12px;
+      background: var(--cream-warm);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.5) inset,
+        0 30px 60px -30px rgba(42, 47, 68, 0.22);
+    }
+    .mice-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .mice-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg,
+          rgba(247, 244, 236, 0.06) 0%,
+          rgba(247, 244, 236, 0) 35%,
+          rgba(42, 47, 68, 0.10) 100%);
+      pointer-events: none;
+    }
+    .mice-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: clamp(1.6rem, 2.4vw, 2.2rem);
+    }
+    .mice-body {
+      font-size: clamp(1.05rem, 1.2vw, 1.2rem);
+      font-weight: 400;
+      line-height: 1.55;
+      color: var(--ink-body);
+      margin: 0;
+      max-width: 32rem;
+    }
+    .mice-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .mice-block-label {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin: 0;
+    }
+    .mice-markers {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.4rem 1.05rem;
+    }
+    .mice-markers .marker {
+      font-size: 0.86rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--ink-body);
+      white-space: nowrap;
+      position: relative;
+    }
+    .mice-markers .marker:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: -0.58rem;
+      top: 50%;
+      width: 3px;
+      height: 3px;
+      margin-top: -1.5px;
+      border-radius: 999px;
+      background: var(--burgundy);
+      opacity: 0.45;
+    }
+    .mice-services {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.35rem 0;
+    }
+    .mice-services .service {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--ink-soft);
+      white-space: nowrap;
+      position: relative;
+      padding-right: 1.1rem;
+    }
+    .mice-services .service:not(:last-child)::after {
+      content: '/';
+      position: absolute;
+      right: 0.32rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--burgundy);
+      opacity: 0.5;
+      font-size: 0.78rem;
+      line-height: 1;
+    }
+    .mice-cases {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.7rem 0.8rem;
+    }
+    .mice-case {
+      padding: 0.95rem 1.05rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(247, 244, 236, 0.45);
+    }
+    .mice-case-name {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 1.05rem;
+      line-height: 1.2;
+      letter-spacing: -0.003em;
+      color: var(--ink);
+      margin: 0 0 0.3rem;
+    }
+    .mice-case-descriptor {
+      font-family: var(--font-sans);
+      font-size: 0.74rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+    .mice-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.9rem 1rem;
+      margin-top: 0.4rem;
+    }
+    .mice-link {
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 0.4rem 0.2rem;
+      border-bottom: 1px solid var(--line-strong);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .mice-link:hover {
+      color: var(--burgundy);
+      border-color: var(--burgundy);
+    }
+
+    /* Presentation dialog */
+    .mice-dialog {
+      border: none;
+      border-radius: 14px;
+      padding: 0;
+      max-width: 480px;
+      width: 90vw;
+      background: var(--cream);
+      box-shadow: 0 30px 80px -20px rgba(42, 47, 68, 0.4);
+      color: var(--ink);
+    }
+    .mice-dialog::backdrop {
+      background: rgba(42, 47, 68, 0.55);
+      backdrop-filter: blur(4px);
+    }
+    .mice-dialog-inner {
+      padding: clamp(1.8rem, 3vw, 2.4rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .mice-dialog-close {
+      position: absolute;
+      top: 0.85rem;
+      right: 0.85rem;
+      width: 32px;
+      height: 32px;
+      background: transparent;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      color: var(--ink-mute);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .mice-dialog-close:hover { background: rgba(42, 47, 68, 0.06); color: var(--ink); }
+    .mice-dialog-close svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
+    .mice-dialog-title {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 1.15;
+      color: var(--ink);
+      margin: 0;
+      padding-right: 2rem;
+    }
+    .mice-dialog-sub {
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--ink-body);
+      margin: 0;
+    }
+    .mice-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 0.4rem;
+    }
+    .mice-form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .mice-form-label {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .mice-form-input {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      padding: 0.7rem 0.9rem;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .mice-form-input:focus {
+      border-color: var(--burgundy);
+      background: rgba(255, 255, 255, 0.9);
+    }
+    .mice-dialog .btn {
+      margin-top: 0.4rem;
+      align-self: stretch;
+      justify-content: center;
+    }
+
     @media (max-width: 900px) {
       .about-grid {
         grid-template-columns: 1fr;
@@ -1005,6 +1302,15 @@
       }
       .tours-arrow-prev { left: 0.4rem; }
       .tours-arrow-next { right: 0.4rem; }
+
+      /* Block 5 mobile */
+      .mice-spread {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+      .mice-media { aspect-ratio: 4 / 5; }
+      .mice-cases { grid-template-columns: 1fr; }
+      .mice-headline { font-size: clamp(1.8rem, 7.5vw, 2.4rem); }
     }
   </style>
 </head>
@@ -1228,24 +1534,20 @@
       <div class="tours-carousel" id="tours-carousel" tabindex="0" aria-roledescription="карусель" aria-label="Туры и международные программы">
         <article class="tour-card" aria-labelledby="tour-1-title">
           <div class="tour-card-media">
-            <img src="./block-4/out/card-1-research_seed1.png" alt="Двое международных делегатов в частной библиотеке исследовательского центра, золотой час" loading="lazy">
+            <img src="./block-4/out/card-4-family_v4_seed1.png" alt="Семья трёх поколений на черноморской террасе во время неспешного семейного обеда, момент передачи персика" loading="lazy">
           </div>
           <div class="tour-card-content">
             <p class="tour-card-number">01</p>
-            <h3 id="tour-1-title" class="tour-card-title">Научно-образовательный туризм</h3>
+            <h3 id="tour-1-title" class="tour-card-title">Семейные путешествия</h3>
             <p class="tour-card-body">
-              Программы, объединяющие путешествия, образование и&nbsp;международный обмен: ведущие вузы России, научные центры, лаборатории, образовательные форумы и&nbsp;профессиональные программы для студентов, специалистов и&nbsp;корпоративных команд.
+              Комфортные маршруты для семейного отдыха с&nbsp;индивидуальным сопровождением, безопасной логистикой и&nbsp;premium-сервисом.
             </p>
             <div class="tour-card-markers">
-              <span class="marker">университеты</span>
-              <span class="marker">научные центры</span>
-              <span class="marker">лаборатории</span>
-              <span class="marker">образовательные форумы</span>
-              <span class="marker">международные обмены</span>
-              <span class="marker">повышение квалификации</span>
-              <span class="marker">корпоративное обучение</span>
-              <span class="marker">профессиональные стажировки</span>
-              <span class="marker">культурно-познавательные маршруты</span>
+              <span class="marker">multi-generation travel</span>
+              <span class="marker">семейный отдых</span>
+              <span class="marker">wellness family programs</span>
+              <span class="marker">культурные маршруты</span>
+              <span class="marker">premium family service</span>
             </div>
             <a href="#contacts" class="btn btn-secondary">
               Подробнее
@@ -1294,25 +1596,24 @@
 
         <article class="tour-card" aria-labelledby="tour-3-title">
           <div class="tour-card-media">
-            <img src="./block-4/out/card-3-business_v4_seed1.png" alt="Двое международных деловых путешественников в премиальном клубном лаунже с видом на исторический город в золотой час" loading="lazy">
+            <img src="./block-4/out/card-1-research_seed1.png" alt="Двое международных делегатов в частной библиотеке исследовательского центра, золотой час" loading="lazy">
           </div>
           <div class="tour-card-content">
             <p class="tour-card-number">03</p>
-            <h3 id="tour-3-title" class="tour-card-title">Business Leisure &amp;&nbsp;Деловой туризм</h3>
+            <h3 id="tour-3-title" class="tour-card-title">Научно-образовательный туризм</h3>
             <p class="tour-card-body">
-              Организация международных бизнес-поездок, деловых встреч, форумов и&nbsp;конференций с&nbsp;premium-сервисом, индивидуальным сопровождением и&nbsp;совмещением работы, отдыха и&nbsp;культурной программы.
+              Программы, объединяющие путешествия, образование и&nbsp;международный обмен: ведущие вузы России, научные центры, лаборатории, образовательные форумы и&nbsp;профессиональные программы для студентов, специалистов и&nbsp;корпоративных команд.
             </p>
             <div class="tour-card-markers">
-              <span class="marker">business leisure</span>
-              <span class="marker">бизнес-миссии</span>
-              <span class="marker">деловые встречи</span>
-              <span class="marker">конференции</span>
-              <span class="marker">корпоративные выезды</span>
-              <span class="marker">concierge-service</span>
-              <span class="marker">VIP-сопровождение</span>
-              <span class="marker">безопасность</span>
-              <span class="marker">персональная логистика</span>
-              <span class="marker">культурная программа</span>
+              <span class="marker">университеты</span>
+              <span class="marker">научные центры</span>
+              <span class="marker">лаборатории</span>
+              <span class="marker">образовательные форумы</span>
+              <span class="marker">международные обмены</span>
+              <span class="marker">повышение квалификации</span>
+              <span class="marker">корпоративное обучение</span>
+              <span class="marker">профессиональные стажировки</span>
+              <span class="marker">культурно-познавательные маршруты</span>
             </div>
             <a href="#contacts" class="btn btn-secondary">
               Подробнее
@@ -1328,20 +1629,25 @@
 
         <article class="tour-card" aria-labelledby="tour-4-title">
           <div class="tour-card-media">
-            <img src="./block-4/out/card-4-family_v4_seed1.png" alt="Семья трёх поколений на черноморской террасе во время неспешного семейного обеда, момент передачи персика" loading="lazy">
+            <img src="./block-4/out/card-3-business_v4_seed1.png" alt="Двое международных деловых путешественников в премиальном клубном лаунже с видом на исторический город в золотой час" loading="lazy">
           </div>
           <div class="tour-card-content">
             <p class="tour-card-number">04</p>
-            <h3 id="tour-4-title" class="tour-card-title">Семейные путешествия</h3>
+            <h3 id="tour-4-title" class="tour-card-title">Business Leisure &amp;&nbsp;Деловой туризм</h3>
             <p class="tour-card-body">
-              Комфортные маршруты для семейного отдыха с&nbsp;индивидуальным сопровождением, безопасной логистикой и&nbsp;premium-сервисом.
+              Организация международных бизнес-поездок, деловых встреч, форумов и&nbsp;конференций с&nbsp;premium-сервисом, индивидуальным сопровождением и&nbsp;совмещением работы, отдыха и&nbsp;культурной программы.
             </p>
             <div class="tour-card-markers">
-              <span class="marker">multi-generation travel</span>
-              <span class="marker">семейный отдых</span>
-              <span class="marker">wellness family programs</span>
-              <span class="marker">культурные маршруты</span>
-              <span class="marker">premium family service</span>
+              <span class="marker">business leisure</span>
+              <span class="marker">бизнес-миссии</span>
+              <span class="marker">деловые встречи</span>
+              <span class="marker">конференции</span>
+              <span class="marker">корпоративные выезды</span>
+              <span class="marker">concierge-service</span>
+              <span class="marker">VIP-сопровождение</span>
+              <span class="marker">безопасность</span>
+              <span class="marker">персональная логистика</span>
+              <span class="marker">культурная программа</span>
             </div>
             <a href="#contacts" class="btn btn-secondary">
               Подробнее
@@ -1398,6 +1704,144 @@
       <button type="button" class="tours-dot" aria-label="Карточка 5" data-index="4"></button>
     </div>
   </section>
+
+  <section class="section-mice" id="mice" aria-labelledby="mice-headline">
+    <header class="mice-heading">
+      <div class="eyebrow">
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 0 L13.4 9 L22 11 L13.4 13.5 L12 24 L10.6 13.5 L2 11 L10.6 9 Z M12 4 L18 12 L12 20 L6 12 Z" fill-rule="evenodd"/>
+        </svg>
+        <span>MICE &amp; Events</span>
+      </div>
+      <h2 id="mice-headline" class="mice-headline">
+        Международные мероприятия и&nbsp;MICE-проекты
+      </h2>
+      <p class="mice-subtitle">
+        Организация форумов, корпоративных программ, деловых мероприятий и&nbsp;международных событий с&nbsp;полным сопровождением участников и&nbsp;делегаций.
+      </p>
+    </header>
+
+    <div class="mice-spread">
+      <div class="mice-media">
+        <img src="./block-5/out/event-hall_v3_daylit_seed1.png" alt="Международная делегация в премиальном зале с большими арочными окнами, рабочая сессия за овальным столом, дневной свет" loading="lazy">
+      </div>
+
+      <div class="mice-content">
+        <p class="mice-body">
+          ALATUR организует международные форумы, корпоративные мероприятия, incentive-программы и&nbsp;деловые события, объединяя высокий уровень сервиса, международную коммуникацию и&nbsp;профессиональное сопровождение участников.
+        </p>
+
+        <div class="mice-block">
+          <p class="mice-block-label">Направления</p>
+          <div class="mice-markers">
+            <span class="marker">Международные форумы</span>
+            <span class="marker">Корпоративные мероприятия</span>
+            <span class="marker">Incentive-программы</span>
+            <span class="marker">Деловые события</span>
+            <span class="marker">Международные делегации</span>
+            <span class="marker">Культурные проекты</span>
+            <span class="marker">Business Events</span>
+            <span class="marker">MICE</span>
+          </div>
+        </div>
+
+        <div class="mice-block">
+          <p class="mice-block-label">Сопровождение</p>
+          <div class="mice-services">
+            <span class="service">Подбор площадок</span>
+            <span class="service">Логистика участников</span>
+            <span class="service">Протокольное сопровождение</span>
+            <span class="service">Переводчики</span>
+            <span class="service">VIP-hospitality</span>
+            <span class="service">Культурная программа</span>
+            <span class="service">Координация делегаций</span>
+          </div>
+        </div>
+
+        <div class="mice-block">
+          <p class="mice-block-label">Кейсы и&nbsp;проекты</p>
+          <div class="mice-cases">
+            <div class="mice-case">
+              <p class="mice-case-name">Конгресс молодых учёных</p>
+              <p class="mice-case-descriptor">научный форум</p>
+            </div>
+            <div class="mice-case">
+              <p class="mice-case-name">Всемирный молодёжный форум</p>
+              <p class="mice-case-descriptor">международный форум</p>
+            </div>
+            <div class="mice-case">
+              <p class="mice-case-name">Международные форумы</p>
+              <p class="mice-case-descriptor">деловые события</p>
+            </div>
+            <div class="mice-case">
+              <p class="mice-case-name">BRICS-проекты</p>
+              <p class="mice-case-descriptor">межгосударственные программы</p>
+            </div>
+            <div class="mice-case">
+              <p class="mice-case-name">Международные делегации</p>
+              <p class="mice-case-descriptor">приём и&nbsp;сопровождение</p>
+            </div>
+            <div class="mice-case">
+              <p class="mice-case-name">Культурные мероприятия</p>
+              <p class="mice-case-descriptor">кросс-культурные программы</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mice-cta-row">
+          <button type="button" class="btn btn-primary" data-open-dialog="presentation">
+            Получить презентацию по&nbsp;мероприятиям
+            <span class="btn-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 17 L17 7"/>
+                <path d="M8.5 7 H17 V15.5"/>
+              </svg>
+            </span>
+          </button>
+          <a href="#contacts" class="mice-link">Обсудить мероприятие</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dialog class="mice-dialog" id="presentation-dialog" aria-labelledby="presentation-dialog-title">
+    <div class="mice-dialog-inner">
+      <button type="button" class="mice-dialog-close" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg>
+      </button>
+      <h3 id="presentation-dialog-title" class="mice-dialog-title">Презентация по&nbsp;мероприятиям</h3>
+      <p class="mice-dialog-sub">
+        Оставьте контакты — пришлём PDF-презентацию ALATUR с&nbsp;кейсами и&nbsp;форматами сопровождения в&nbsp;течение часа.
+      </p>
+      <form class="mice-form" novalidate>
+        <div class="mice-form-field">
+          <label class="mice-form-label" for="presentation-name">Имя</label>
+          <input class="mice-form-input" type="text" id="presentation-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="mice-form-field">
+          <label class="mice-form-label" for="presentation-company">Компания</label>
+          <input class="mice-form-input" type="text" id="presentation-company" name="company" autocomplete="organization">
+        </div>
+        <div class="mice-form-field">
+          <label class="mice-form-label" for="presentation-country">Страна</label>
+          <input class="mice-form-input" type="text" id="presentation-country" name="country" autocomplete="country-name">
+        </div>
+        <div class="mice-form-field">
+          <label class="mice-form-label" for="presentation-contact">Email или&nbsp;WhatsApp</label>
+          <input class="mice-form-input" type="text" id="presentation-contact" name="contact" autocomplete="email" required>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Получить презентацию
+          <span class="btn-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17 L17 7"/>
+              <path d="M8.5 7 H17 V15.5"/>
+            </svg>
+          </span>
+        </button>
+      </form>
+    </div>
+  </dialog>
 
   <script>
     (function () {
@@ -1478,6 +1922,43 @@
 
       carousel.scrollLeft = 0;
       updateUI();
+    })();
+
+    (function () {
+      var dialog = document.getElementById('presentation-dialog');
+      if (!dialog) return;
+      var triggers = document.querySelectorAll('[data-open-dialog="presentation"]');
+      var closeBtn = dialog.querySelector('.mice-dialog-close');
+      var form = dialog.querySelector('form');
+
+      triggers.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (typeof dialog.showModal === 'function') {
+            dialog.showModal();
+          } else {
+            dialog.setAttribute('open', '');
+          }
+        });
+      });
+
+      closeBtn.addEventListener('click', function () { dialog.close(); });
+
+      dialog.addEventListener('click', function (e) {
+        var rect = dialog.getBoundingClientRect();
+        var inside = e.clientX >= rect.left && e.clientX <= rect.right &&
+                     e.clientY >= rect.top && e.clientY <= rect.bottom;
+        if (!inside) dialog.close();
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = form.querySelector('#presentation-name').value.trim();
+        var contact = form.querySelector('#presentation-contact').value.trim();
+        if (!name || !contact) return;
+        form.reset();
+        dialog.close();
+        window.alert('Спасибо! Презентация будет отправлена на ваш email или WhatsApp в течение часа.');
+      });
     })();
   </script>
 </body>
