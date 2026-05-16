@@ -1338,6 +1338,187 @@
       opacity: 0.7;
     }
 
+    /* ===== Block 8 - Журнал ALATUR ===== */
+    .section-journal {
+      background:
+        radial-gradient(ellipse 55% 60% at 88% 8%, rgba(208, 188, 152, 0.26) 0%, rgba(208, 188, 152, 0) 70%),
+        radial-gradient(ellipse 60% 65% at 8% 92%, rgba(195, 170, 130, 0.22) 0%, rgba(195, 170, 130, 0) 70%),
+        var(--cream);
+      padding: clamp(3.5rem, 6vw, 6rem) 0;
+    }
+    .journal-heading {
+      max-width: 56rem;
+      margin: 0 auto clamp(2.2rem, 3.5vw, 3rem);
+      text-align: center;
+      padding: 0 var(--pad-x);
+    }
+    .journal-heading .eyebrow {
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .journal-headline {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.9rem, 3.3vw, 2.7rem);
+      line-height: 1.08;
+      letter-spacing: -0.008em;
+      color: var(--ink);
+      margin: 0 0 0.9rem;
+    }
+    .journal-subtitle {
+      font-size: clamp(0.96rem, 1.04vw, 1.1rem);
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ink-body);
+      margin: 0 auto;
+      max-width: 52rem;
+    }
+    .journal-grid {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.6rem, 2.4vw, 2.2rem);
+    }
+    .journal-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--cream-warm);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    }
+    .journal-card:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.5) inset,
+        0 30px 50px -25px rgba(42, 47, 68, 0.18);
+    }
+    .journal-card-media {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--cream-warm);
+    }
+    .journal-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s var(--ease-soft);
+    }
+    .journal-card:hover .journal-card-media img {
+      transform: scale(1.03);
+    }
+    .journal-card-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg,
+          rgba(247, 244, 236, 0.0) 60%,
+          rgba(42, 47, 68, 0.08) 100%);
+      pointer-events: none;
+    }
+    .journal-card-thought {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      background:
+        radial-gradient(ellipse 80% 90% at 50% 50%, rgba(208, 188, 152, 0.35) 0%, rgba(208, 188, 152, 0) 75%),
+        var(--cream-warm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.2rem, 2.5vw, 2rem);
+    }
+    .journal-card-thought-text {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(1rem, 1.4vw, 1.4rem);
+      line-height: 1.3;
+      color: var(--ink);
+      margin: 0;
+      text-align: center;
+      max-width: 24rem;
+      text-wrap: balance;
+    }
+    .journal-card-thought-text::before {
+      content: '«';
+      color: var(--burgundy);
+      margin-right: 0.1em;
+    }
+    .journal-card-thought-text::after {
+      content: '»';
+      color: var(--burgundy);
+      margin-left: 0.1em;
+    }
+    .journal-card-content {
+      padding: clamp(1.1rem, 1.6vw, 1.4rem) clamp(1.2rem, 1.8vw, 1.5rem) clamp(1.3rem, 1.8vw, 1.5rem);
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      flex: 1;
+    }
+    .journal-card-date {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin: 0;
+    }
+    .journal-card-title {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.15rem, 1.45vw, 1.4rem);
+      line-height: 1.18;
+      letter-spacing: -0.003em;
+      color: var(--ink);
+      margin: 0;
+      text-wrap: balance;
+    }
+    .journal-card-excerpt {
+      font-family: var(--font-sans);
+      font-size: 0.86rem;
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--ink-body);
+      margin: 0;
+      text-wrap: pretty;
+    }
+    .journal-card-link {
+      margin-top: auto;
+      padding-top: 0.4rem;
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--burgundy);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .journal-card-link::after {
+      content: '→';
+      transition: transform 0.25s var(--ease);
+    }
+    .journal-card:hover .journal-card-link::after {
+      transform: translateX(3px);
+    }
+    .journal-cta-row {
+      display: flex;
+      justify-content: center;
+      margin-top: clamp(2rem, 3.5vw, 3rem);
+      padding: 0 var(--pad-x);
+    }
+
     @media (max-width: 900px) {
       .about-grid {
         grid-template-columns: 1fr;
@@ -1392,6 +1573,19 @@
       .quote-content { max-width: 100%; }
       .quote-media { max-width: 22rem; aspect-ratio: 4 / 5; }
       .quote-text { font-size: clamp(1.2rem, 5vw, 1.6rem); }
+
+      /* Block 8 mobile */
+      .journal-grid {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+      }
+      .journal-headline { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+    }
+
+    @media (min-width: 901px) and (max-width: 1180px) {
+      .journal-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
@@ -1413,7 +1607,7 @@
       <a href="#destinations">Направления</a>
       <a href="#tours">Туры</a>
       <a href="#mice">MICE &amp; Events</a>
-      <a href="#articles">Статьи</a>
+      <a href="#journal">Журнал</a>
       <a href="#partners">Партнёры</a>
       <a href="#contacts">Контакты</a>
     </nav>
@@ -1442,7 +1636,7 @@
     <a href="#destinations" class="mm-link">Направления</a>
     <a href="#tours" class="mm-link">Туры</a>
     <a href="#mice" class="mm-link">MICE &amp; Events</a>
-    <a href="#articles" class="mm-link">Статьи</a>
+    <a href="#journal" class="mm-link">Журнал</a>
     <a href="#partners" class="mm-link">Партнёры</a>
     <a href="#contacts" class="mm-link">Контакты</a>
     <div class="mm-footer">
@@ -1937,6 +2131,107 @@
       </div>
       <h2 id="partners-stub-title" class="stub-title">Карусель логотипов партнёров</h2>
       <p class="stub-note">Ждём логотипы от&nbsp;клиента</p>
+    </div>
+  </section>
+
+  <section class="section-journal" id="journal" aria-labelledby="journal-headline">
+    <header class="journal-heading">
+      <div class="eyebrow">
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 0 L13.4 9 L22 11 L13.4 13.5 L12 24 L10.6 13.5 L2 11 L10.6 9 Z M12 4 L18 12 L12 20 L6 12 Z" fill-rule="evenodd"/>
+        </svg>
+        <span>Журнал</span>
+      </div>
+      <h2 id="journal-headline" class="journal-headline">Журнал ALATUR</h2>
+      <p class="journal-subtitle">
+        Материалы о&nbsp;международном туризме, деловых мероприятиях, образовательных проектах и&nbsp;культурных инициативах ALATUR.
+      </p>
+    </header>
+
+    <div class="journal-grid">
+      <a class="journal-card" href="https://t.me/alaturprovip/77" target="_blank" rel="noopener">
+        <div class="journal-card-media">
+          <img src="./block-8/out/article-science.jpg" alt="Круглый стол по научно-популярному туризму в Общественной палате РФ" loading="lazy">
+        </div>
+        <div class="journal-card-content">
+          <p class="journal-card-date">17 апреля 2026</p>
+          <h3 class="journal-card-title">Международная упаковка научно-популярного туризма</h3>
+          <p class="journal-card-excerpt">В&nbsp;Общественной палате РФ&nbsp;обсудили перспективы развития научно-популярного туризма как инструмента международного сотрудничества с&nbsp;делегатами из&nbsp;Омана, Кыргызстана, Индии и&nbsp;стран Африки.</p>
+          <span class="journal-card-link">Подробнее</span>
+        </div>
+      </a>
+
+      <a class="journal-card" href="https://t.me/alaturprovip/73" target="_blank" rel="noopener">
+        <div class="journal-card-media">
+          <img src="./block-8/out/article-business.jpg" alt="Выступление на бизнес-панели Альфа-Банка" loading="lazy">
+        </div>
+        <div class="journal-card-content">
+          <p class="journal-card-date">20 апреля 2026</p>
+          <h3 class="journal-card-title">Международный бизнес в&nbsp;эпоху адаптивности</h3>
+          <p class="journal-card-excerpt">На&nbsp;панели Альфа-Банка обсудили, как строить и&nbsp;масштабировать международный бизнес в&nbsp;нынешней реальности. Главное было не&nbsp;в&nbsp;презентации, а&nbsp;в&nbsp;вопросах.</p>
+          <span class="journal-card-link">Подробнее</span>
+        </div>
+      </a>
+
+      <a class="journal-card" href="https://t.me/alaturprovip/67" target="_blank" rel="noopener">
+        <div class="journal-card-media">
+          <img src="./block-8/out/article-brics.jpg" alt="Переговоры с китайской спортивной ассоциацией в рамках отраслевого форума" loading="lazy">
+        </div>
+        <div class="journal-card-content">
+          <p class="journal-card-date">30 марта 2026</p>
+          <h3 class="journal-card-title">BRICS+: международный детский футбольный турнир</h3>
+          <p class="journal-card-excerpt">Рабочая встреча с&nbsp;представителями китайской спортивной ассоциации о&nbsp;развитии международного сотрудничества в&nbsp;сфере детского спорта и&nbsp;туризма.</p>
+          <span class="journal-card-link">Подробнее</span>
+        </div>
+      </a>
+
+      <a class="journal-card" href="https://t.me/alaturprovip/64" target="_blank" rel="noopener">
+        <div class="journal-card-thought">
+          <p class="journal-card-thought-text">Настоящая роскошь&nbsp;— это когда её&nbsp;не&nbsp;видно</p>
+        </div>
+        <div class="journal-card-content">
+          <p class="journal-card-date">28 марта 2026</p>
+          <h3 class="journal-card-title">Тихая роскошь: настоящий премиум-туризм</h3>
+          <p class="journal-card-excerpt">Премиальный туризм сегодня&nbsp;— не&nbsp;про показ, а&nbsp;про комфорт, приватность и&nbsp;продуманность. То, за&nbsp;что действительно платят.</p>
+          <span class="journal-card-link">Подробнее</span>
+        </div>
+      </a>
+
+      <a class="journal-card" href="https://t.me/alaturprovip/55" target="_blank" rel="noopener">
+        <div class="journal-card-media">
+          <img src="./block-8/out/article-caucasus.jpg" alt="Мост через горную реку на Кавказе" loading="lazy">
+        </div>
+        <div class="journal-card-content">
+          <p class="journal-card-date">17 марта 2026</p>
+          <h3 class="journal-card-title">Кавказ весной: маршруты для путешественников</h3>
+          <p class="journal-card-excerpt">Пять мест Северного Кавказа, которые открываются для премиальных путешествий в&nbsp;марте и&nbsp;апреле.</p>
+          <span class="journal-card-link">Подробнее</span>
+        </div>
+      </a>
+
+      <a class="journal-card" href="https://t.me/alaturprovip/71" target="_blank" rel="noopener">
+        <div class="journal-card-thought">
+          <p class="journal-card-thought-text">Самое важное происходит не&nbsp;снаружи, а&nbsp;внутри</p>
+        </div>
+        <div class="journal-card-content">
+          <p class="journal-card-date">7 апреля 2026</p>
+          <h3 class="journal-card-title">Места силы: путешествия за&nbsp;тишиной</h3>
+          <p class="journal-card-excerpt">Старые храмы, тишина, мерцание свечей. В&nbsp;таких местах человек ищет не&nbsp;новые впечатления, а&nbsp;возможность услышать себя.</p>
+          <span class="journal-card-link">Подробнее</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="journal-cta-row">
+      <a href="https://t.me/alaturprovip" target="_blank" rel="noopener" class="btn btn-secondary">
+        Читать журнал
+        <span class="btn-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17 L17 7"/>
+            <path d="M8.5 7 H17 V15.5"/>
+          </svg>
+        </span>
+      </a>
     </div>
   </section>
 
