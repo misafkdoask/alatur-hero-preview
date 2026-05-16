@@ -1102,38 +1102,33 @@
       opacity: 0.6;
     }
     .mice-cases {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.55rem;
-    }
-    .mice-case {
-      padding: 0.9rem 1rem;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(247, 244, 236, 0.45);
-      display: flex;
-      flex-direction: column-reverse;
-      gap: 0.55rem;
-    }
-    .mice-case-descriptor {
-      font-family: var(--font-sans);
-      font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--burgundy);
+      list-style: none;
       margin: 0;
-      line-height: 1.4;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
-    .mice-case-name {
+    .mice-cases li {
       font-family: var(--font-display);
       font-weight: 300;
-      font-size: 1.35rem;
-      line-height: 1.18;
-      letter-spacing: -0.005em;
+      font-size: 1.12rem;
+      line-height: 1.25;
+      letter-spacing: -0.003em;
       color: var(--ink);
-      margin: 0;
+      position: relative;
+      padding-left: 1.1rem;
       text-wrap: balance;
+    }
+    .mice-cases li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 6px;
+      height: 1px;
+      background: var(--burgundy);
+      opacity: 0.6;
     }
     .mice-cta-row {
       display: flex;
@@ -1385,7 +1380,7 @@
         grid-template-columns: 1fr;
         gap: 1.4rem;
       }
-      .mice-cases { grid-template-columns: 1fr; }
+      .mice-cases { gap: 0.6rem; }
       .mice-headline { font-size: clamp(1.7rem, 7vw, 2.2rem); }
       .mice-body { font-size: clamp(0.96rem, 4vw, 1.05rem); }
 
@@ -1848,32 +1843,14 @@
 
         <div class="mice-block">
           <p class="mice-block-label">Кейсы и&nbsp;проекты</p>
-          <div class="mice-cases">
-            <div class="mice-case">
-              <p class="mice-case-name">Конгресс молодых учёных</p>
-              <p class="mice-case-descriptor">научный форум</p>
-            </div>
-            <div class="mice-case">
-              <p class="mice-case-name">Всемирный молодёжный форум</p>
-              <p class="mice-case-descriptor">международный форум</p>
-            </div>
-            <div class="mice-case">
-              <p class="mice-case-name">Международные форумы</p>
-              <p class="mice-case-descriptor">деловые события</p>
-            </div>
-            <div class="mice-case">
-              <p class="mice-case-name">BRICS-проекты</p>
-              <p class="mice-case-descriptor">межгосударственные программы</p>
-            </div>
-            <div class="mice-case">
-              <p class="mice-case-name">Международные делегации</p>
-              <p class="mice-case-descriptor">приём и&nbsp;сопровождение</p>
-            </div>
-            <div class="mice-case">
-              <p class="mice-case-name">Культурные мероприятия</p>
-              <p class="mice-case-descriptor">кросс-культурные программы</p>
-            </div>
-          </div>
+          <ul class="mice-cases">
+            <li>Конгресс молодых учёных</li>
+            <li>Всемирный молодёжный форум</li>
+            <li>Международные форумы</li>
+            <li>BRICS-проекты</li>
+            <li>Международные делегации</li>
+            <li>Культурные мероприятия</li>
+          </ul>
         </div>
       </div>
 
