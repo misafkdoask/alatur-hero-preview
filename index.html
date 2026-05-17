@@ -94,6 +94,11 @@
       gap: 0.6rem;
       flex-shrink: 0;
     }
+    .brand-logo {
+      height: clamp(38px, 3.6vw, 52px);
+      width: auto;
+      display: block;
+    }
     .brand-mark {
       width: 20px;
       height: 20px;
@@ -974,10 +979,7 @@
 
     /* ===== Block 5 - MICE & Events ===== */
     .section-mice {
-      background:
-        radial-gradient(ellipse 55% 60% at 88% 8%, rgba(208, 188, 152, 0.28) 0%, rgba(208, 188, 152, 0) 70%),
-        radial-gradient(ellipse 60% 65% at 8% 92%, rgba(195, 170, 130, 0.24) 0%, rgba(195, 170, 130, 0) 70%),
-        var(--cream);
+      background: var(--cream);
       padding: clamp(3rem, 5.5vw, 5rem) 0;
     }
     .mice-heading {
@@ -1249,13 +1251,29 @@
       justify-content: center;
     }
 
-    /* ===== Block 6 - Quote (Putin) ===== */
+    /* ===== Block 6 - Quote (Putin) — DARK feature break ===== */
     .section-quote {
       background:
-        radial-gradient(ellipse 55% 60% at 12% 20%, rgba(208, 188, 152, 0.30) 0%, rgba(208, 188, 152, 0) 70%),
-        radial-gradient(ellipse 50% 55% at 90% 80%, rgba(195, 170, 130, 0.24) 0%, rgba(195, 170, 130, 0) 70%),
-        var(--cream);
+        radial-gradient(ellipse 55% 60% at 12% 20%, rgba(208, 188, 152, 0.08) 0%, rgba(208, 188, 152, 0) 70%),
+        radial-gradient(ellipse 50% 55% at 90% 80%, rgba(139, 26, 26, 0.10) 0%, rgba(139, 26, 26, 0) 70%),
+        #1f1813;
       padding: clamp(3.5rem, 7vw, 7rem) 0;
+      color: #f0e8d8;
+    }
+    .section-quote .eyebrow {
+      color: #d8a868;
+    }
+    .section-quote .eyebrow .star {
+      color: #d8a868;
+    }
+    .section-quote .quote-text {
+      color: #f5ecd8;
+    }
+    .section-quote .quote-attribution {
+      color: rgba(245, 236, 216, 0.7);
+    }
+    .section-quote .quote-attribution::before {
+      background: #d8a868;
     }
     .quote-spread {
       display: grid;
@@ -1340,10 +1358,7 @@
 
     /* ===== Block 7 - Партнёры ===== */
     .section-partners {
-      background:
-        radial-gradient(ellipse 55% 60% at 88% 12%, rgba(208, 188, 152, 0.22) 0%, rgba(208, 188, 152, 0) 70%),
-        radial-gradient(ellipse 60% 65% at 8% 88%, rgba(195, 170, 130, 0.18) 0%, rgba(195, 170, 130, 0) 70%),
-        var(--cream);
+      background: #ffffff;
       padding: clamp(3.5rem, 6vw, 6rem) 0;
     }
     .partners-heading {
@@ -1386,19 +1401,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: clamp(0.6rem, 1vw, 1.1rem);
-      margin: clamp(0.3rem, 0.6vw, 0.8rem);
-      background: #ffffff;
-      border-radius: 6px;
-      box-shadow: 0 1px 2px rgba(42, 47, 68, 0.04);
-      transition: background 0.25s var(--ease), box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
+      padding: clamp(0.5rem, 0.9vw, 1rem);
+      transition: transform 0.25s var(--ease);
     }
     .partner-tile:hover {
-      box-shadow: 0 10px 22px -10px rgba(42, 47, 68, 0.18);
       transform: translateY(-2px);
     }
     .partner-tile:not(:last-child)::after {
-      display: none;
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 22%;
+      bottom: 22%;
+      width: 1px;
+      background: rgba(42, 47, 68, 0.10);
     }
     .partner-tile img {
       max-width: 96%;
@@ -1713,12 +1729,7 @@
 
   <header class="site-header" aria-label="Главное меню">
     <a href="#" class="brand" aria-label="ALATUR — на главную">
-      <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 1.5 L13.6 8.1 L20.5 6.5 L15.7 11.5 L22.5 13.5 L15.7 14.7 L20.5 19.7 L13.6 17.9 L12 24.5 L10.4 17.9 L3.5 19.7 L8.3 14.7 L1.5 13.5 L8.3 11.5 L3.5 6.5 L10.4 8.1 Z"
-              stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
-        <circle cx="12" cy="13" r="1.6" fill="currentColor"/>
-      </svg>
-      <span class="brand-name">ALATUR</span>
+      <img class="brand-logo" src="./alatur-logo-transparent.svg" alt="ALATUR International Travel Operator">
     </a>
 
     <nav class="site-nav" aria-label="Разделы">
