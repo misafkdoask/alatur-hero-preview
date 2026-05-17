@@ -95,10 +95,10 @@
       flex-shrink: 0;
     }
     .brand-logo {
-      height: clamp(64px, 5.5vw, 84px);
+      height: clamp(70px, 6vw, 92px);
       width: auto;
       display: block;
-      margin-left: clamp(0.6rem, 1vw, 1rem);
+      margin-left: clamp(1.4rem, 2.4vw, 2.4rem);
     }
     .brand-mark {
       width: 20px;
@@ -1597,6 +1597,487 @@
       padding: 0 var(--pad-x);
     }
 
+    /* ===== Block 9 - Руководители ===== */
+    .section-team {
+      background:
+        radial-gradient(ellipse 60% 65% at 12% 10%, rgba(208, 188, 152, 0.28) 0%, rgba(208, 188, 152, 0) 70%),
+        radial-gradient(ellipse 55% 60% at 90% 88%, rgba(195, 170, 130, 0.22) 0%, rgba(195, 170, 130, 0) 70%),
+        var(--cream);
+      padding: clamp(3.5rem, 6vw, 6rem) 0;
+    }
+    .team-heading {
+      max-width: 56rem;
+      margin: 0 auto clamp(2.5rem, 4vw, 3.5rem);
+      text-align: center;
+      padding: 0 var(--pad-x);
+    }
+    .team-heading .eyebrow {
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .team-headline {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.008em;
+      color: var(--ink);
+      margin: 0 0 0.9rem;
+    }
+    .team-subtitle {
+      font-size: clamp(0.96rem, 1.04vw, 1.1rem);
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ink-body);
+      margin: 0 auto;
+      max-width: 50rem;
+    }
+    .team-grid {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: clamp(1.4rem, 2.2vw, 2.2rem);
+      align-items: start;
+    }
+    .team-card {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(0.9rem, 1.3vw, 1.2rem);
+    }
+    .team-card-photo {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--cream-warm);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.5) inset,
+        0 16px 32px -16px rgba(42, 47, 68, 0.18);
+    }
+    .team-card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+      transition: transform 0.5s var(--ease-soft);
+    }
+    .team-card:hover .team-card-photo img {
+      transform: scale(1.03);
+    }
+    .team-card-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg,
+          rgba(247, 244, 236, 0) 60%,
+          rgba(42, 47, 68, 0.08) 100%);
+      pointer-events: none;
+    }
+    .team-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .team-card-role {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin: 0;
+    }
+    .team-card-name {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.25rem, 1.6vw, 1.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.005em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .team-card-descriptor {
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--ink-body);
+      margin: 0;
+    }
+    .team-card-featured .team-card-name {
+      font-size: clamp(1.55rem, 2vw, 2rem);
+    }
+    .team-card-featured .team-card-role {
+      font-size: 0.78rem;
+    }
+    .team-card-featured .team-card-descriptor {
+      font-size: 0.98rem;
+    }
+    .team-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: clamp(2.5rem, 4vw, 3.5rem);
+      padding: 0 var(--pad-x);
+    }
+
+    /* ===== Block 10 - Контакты ===== */
+    .section-contacts {
+      background:
+        radial-gradient(ellipse 60% 60% at 90% 12%, rgba(208, 188, 152, 0.30) 0%, rgba(208, 188, 152, 0) 70%),
+        radial-gradient(ellipse 55% 60% at 8% 92%, rgba(195, 170, 130, 0.24) 0%, rgba(195, 170, 130, 0) 70%),
+        var(--cream);
+      padding: clamp(4rem, 6.5vw, 6.5rem) 0;
+    }
+    .contacts-wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: start;
+    }
+    .contacts-left {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.6rem, 2.5vw, 2.4rem);
+    }
+    .contacts-left .eyebrow { margin-bottom: 0.4rem; }
+    .contacts-headline {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.008em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .contacts-subtitle {
+      font-size: clamp(0.96rem, 1.05vw, 1.1rem);
+      font-weight: 400;
+      line-height: 1.55;
+      color: var(--ink-body);
+      margin: 0;
+      max-width: 32rem;
+    }
+    .contacts-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .contact-item:hover { color: var(--burgundy); }
+    .contact-item-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      color: var(--burgundy);
+    }
+    .contact-item-label {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      width: 5.5rem;
+      flex-shrink: 0;
+    }
+    .contacts-qr-row {
+      display: flex;
+      gap: 1.4rem;
+      align-items: center;
+      margin-top: 0.6rem;
+    }
+    .qr-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .qr-image {
+      width: 96px;
+      height: 96px;
+      padding: 6px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+    .qr-label {
+      font-family: var(--font-sans);
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .contacts-side-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 0.8rem;
+    }
+    .contacts-side-cta a,
+    .contacts-side-cta button {
+      font-family: var(--font-sans);
+      font-size: 0.86rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 0.55rem 0.95rem;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+    .contacts-side-cta a:hover,
+    .contacts-side-cta button:hover {
+      color: var(--burgundy);
+      border-color: var(--burgundy);
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .contacts-form-card {
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: clamp(1.6rem, 2.8vw, 2.4rem);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.5) inset,
+        0 30px 60px -30px rgba(42, 47, 68, 0.18);
+    }
+    .contacts-form-card h3 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+      line-height: 1.12;
+      color: var(--ink);
+      margin: 0 0 0.6rem;
+    }
+    .contacts-form-card .form-sub {
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--ink-body);
+      margin: 0 0 1.2rem;
+    }
+    .contacts-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem 1rem;
+    }
+    .contacts-form .full {
+      grid-column: 1 / -1;
+    }
+    .contacts-form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .contacts-form-label {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .contacts-form-input,
+    .contacts-form-select {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      padding: 0.7rem 0.9rem;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      width: 100%;
+    }
+    .contacts-form-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%238b1a1a' stroke-width='1.6'%3E%3Cpath d='M2 4 L6 8 L10 4'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.85rem center;
+      padding-right: 2.2rem;
+    }
+    .contacts-form-input:focus,
+    .contacts-form-select:focus {
+      border-color: var(--burgundy);
+      background: rgba(255, 255, 255, 0.95);
+    }
+    .contacts-form .btn {
+      margin-top: 0.5rem;
+      align-self: stretch;
+      justify-content: center;
+    }
+    .contacts-trust {
+      font-family: var(--font-sans);
+      font-size: 0.74rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--ink-mute);
+      margin: 1.4rem 0 0;
+      text-align: center;
+    }
+    .contacts-trust .marker {
+      position: relative;
+      white-space: nowrap;
+      padding: 0 0.95rem 0 0;
+    }
+    .contacts-trust .marker:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0.45rem;
+      top: 50%;
+      width: 3px;
+      height: 3px;
+      margin-top: -1.5px;
+      border-radius: 999px;
+      background: var(--burgundy);
+      opacity: 0.45;
+    }
+
+    /* ===== Block 11 - Footer ===== */
+    .site-footer {
+      background: #1f1a16;
+      color: rgba(245, 236, 216, 0.88);
+      padding: clamp(3.5rem, 5.5vw, 5rem) 0 clamp(2rem, 3vw, 2.6rem);
+    }
+    .footer-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1.1fr 1.2fr;
+      gap: clamp(2rem, 4vw, 4rem);
+    }
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .footer-col h4 {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #d8a868;
+      margin: 0 0 0.4rem;
+    }
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .footer-brand img {
+      height: 56px;
+      width: auto;
+      filter: invert(1) brightness(1.2);
+    }
+    .footer-positioning {
+      font-size: 0.86rem;
+      font-weight: 400;
+      line-height: 1.55;
+      color: rgba(245, 236, 216, 0.7);
+      margin: 0;
+      max-width: 22rem;
+    }
+    .footer-nav,
+    .footer-contacts,
+    .footer-legal {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .footer-nav a,
+    .footer-contacts a,
+    .footer-legal a {
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: rgba(245, 236, 216, 0.78);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-nav a:hover,
+    .footer-contacts a:hover,
+    .footer-legal a:hover {
+      color: #f0d49a;
+    }
+    .footer-contacts .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      color: rgba(245, 236, 216, 0.78);
+    }
+    .footer-contacts .contact-line svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      color: #d8a868;
+    }
+    .footer-legal {
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: rgba(245, 236, 216, 0.62);
+    }
+    .footer-legal .reg-line,
+    .footer-legal .org-line {
+      margin: 0 0 0.4rem;
+    }
+    .footer-legal .org-line { color: rgba(245, 236, 216, 0.75); }
+    .footer-bottom {
+      max-width: var(--maxw);
+      margin: clamp(2.4rem, 4vw, 3rem) auto 0;
+      padding: clamp(1.2rem, 2vw, 1.6rem) var(--pad-x) 0;
+      border-top: 1px solid rgba(245, 236, 216, 0.12);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: rgba(245, 236, 216, 0.55);
+    }
+    .footer-lang {
+      display: inline-flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .footer-lang a,
+    .footer-lang span {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: rgba(245, 236, 216, 0.55);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-lang .active { color: #f0d49a; }
+    .footer-lang .sep { color: rgba(245, 236, 216, 0.3); }
+    .footer-lang a:hover { color: #f0d49a; }
+
     @media (max-width: 900px) {
       .about-grid {
         grid-template-columns: 1fr;
@@ -1668,6 +2149,27 @@
       }
       .partners-headline { font-size: clamp(1.7rem, 7vw, 2.2rem); }
 
+      /* Block 9 mobile */
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .team-card-photo { aspect-ratio: 4 / 5; max-width: 20rem; margin: 0 auto; width: 100%; }
+      .team-headline { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+      .team-card-featured .team-card-name { font-size: clamp(1.4rem, 6vw, 1.8rem); }
+
+      /* Block 10 mobile */
+      .contacts-wrap { grid-template-columns: 1fr; gap: 2rem; }
+      .contacts-form { grid-template-columns: 1fr; }
+      .contacts-headline { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+
+      /* Block 11 mobile */
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+
       /* Block 8 mobile */
       .journal-grid {
         grid-template-columns: 1fr;
@@ -1682,6 +2184,11 @@
     }
 
     @media (min-width: 901px) and (max-width: 1180px) {
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .team-card-featured { grid-column: 1 / -1; }
+      .team-card-featured .team-card-photo { aspect-ratio: 16 / 10; max-height: 24rem; }
       .partners-row {
         grid-template-columns: repeat(4, 1fr);
       }
@@ -2365,6 +2872,253 @@
     </div>
   </section>
 
+  <section class="section-team" id="team" aria-labelledby="team-headline">
+    <header class="team-heading">
+      <div class="eyebrow">
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 0 L13.4 9 L22 11 L13.4 13.5 L12 24 L10.6 13.5 L2 11 L10.6 9 Z M12 4 L18 12 L12 20 L6 12 Z" fill-rule="evenodd"/>
+        </svg>
+        <span>Команда</span>
+      </div>
+      <h2 id="team-headline" class="team-headline">Руководители и&nbsp;ключевые эксперты ALATUR</h2>
+      <p class="team-subtitle">
+        Международные проекты, business &amp;&nbsp;MICE, премиальный туризм и&nbsp;развитие партнёрских направлений.
+      </p>
+    </header>
+
+    <div class="team-grid">
+      <article class="team-card team-card-featured">
+        <div class="team-card-photo">
+          <img src="./block-9/out/leader-1-ekaterina.jpg" alt="Екатерина Максимова, генеральный директор ALATUR" loading="lazy">
+        </div>
+        <div class="team-card-content">
+          <p class="team-card-role">Генеральный директор ALATUR</p>
+          <h3 class="team-card-name">Екатерина Максимова</h3>
+          <p class="team-card-descriptor">Международные проекты и&nbsp;стратегическое развитие</p>
+        </div>
+      </article>
+
+      <article class="team-card">
+        <div class="team-card-photo">
+          <img src="./block-9/out/leader-2-aleksandra.jpg" alt="Александра Аверичева" loading="lazy">
+        </div>
+        <div class="team-card-content">
+          <p class="team-card-role">Руководитель регионального развития</p>
+          <h3 class="team-card-name">Александра Аверичева</h3>
+          <p class="team-card-descriptor">Развитие международных и&nbsp;региональных направлений</p>
+        </div>
+      </article>
+
+      <article class="team-card">
+        <div class="team-card-photo">
+          <img src="./block-9/out/leader-3-natalya.jpg" alt="Наталья Чуркина" loading="lazy">
+        </div>
+        <div class="team-card-content">
+          <p class="team-card-role">Руководитель MICE-мероприятий</p>
+          <h3 class="team-card-name">Наталья Чуркина</h3>
+          <p class="team-card-descriptor">Business &amp;&nbsp;MICE · Международные события</p>
+        </div>
+      </article>
+
+      <article class="team-card">
+        <div class="team-card-photo">
+          <img src="./block-9/out/leader-4-ruslan.jpg" alt="Руслан Калпаев" loading="lazy">
+        </div>
+        <div class="team-card-content">
+          <p class="team-card-role">Генеральный директор Alatur Kyrgyzstan</p>
+          <h3 class="team-card-name">Руслан Калпаев</h3>
+          <p class="team-card-descriptor">Международное партнёрство и&nbsp;развитие направления СНГ</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="team-cta">
+      <a href="#contacts" class="btn btn-secondary">
+        Связаться с&nbsp;командой
+        <span class="btn-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17 L17 7"/>
+            <path d="M8.5 7 H17 V15.5"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section-contacts" id="contacts" aria-labelledby="contacts-headline">
+    <div class="contacts-wrap">
+      <div class="contacts-left">
+        <div class="eyebrow">
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0 L13.4 9 L22 11 L13.4 13.5 L12 24 L10.6 13.5 L2 11 L10.6 9 Z M12 4 L18 12 L12 20 L6 12 Z" fill-rule="evenodd"/>
+          </svg>
+          <span>Контакты</span>
+        </div>
+        <h2 id="contacts-headline" class="contacts-headline">
+          Создадим международный проект, путешествие или&nbsp;мероприятие под&nbsp;вашу задачу
+        </h2>
+        <p class="contacts-subtitle">
+          ALATUR организует премиальные путешествия, международные мероприятия, образовательные, медицинские, семейные и&nbsp;business-программы в&nbsp;России и&nbsp;странах БРИКС.
+        </p>
+
+        <div class="contacts-row">
+          <a href="tel:+79649403896" class="contact-item">
+            <span class="contact-item-label">Телефон</span>
+            <span>+7&nbsp;964&nbsp;940-38-96</span>
+          </a>
+          <a href="mailto:info@alatur.pro" class="contact-item">
+            <span class="contact-item-label">Email</span>
+            <span>info@alatur.pro</span>
+          </a>
+          <a href="https://wa.me/79937715388" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-item-label">WhatsApp</span>
+            <span>+7&nbsp;993&nbsp;771-53-88</span>
+          </a>
+          <a href="https://t.me/alaturpro" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-item-label">Telegram</span>
+            <span>@alaturpro</span>
+          </a>
+        </div>
+
+        <div class="contacts-qr-row">
+          <div class="qr-tile">
+            <img class="qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=0&data=https%3A%2F%2Fwa.me%2F79937715388" alt="QR-код WhatsApp" loading="lazy">
+            <span class="qr-label">WhatsApp</span>
+          </div>
+          <div class="qr-tile">
+            <img class="qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=0&data=https%3A%2F%2Ft.me%2Falaturpro" alt="QR-код Telegram" loading="lazy">
+            <span class="qr-label">Telegram</span>
+          </div>
+        </div>
+
+        <div class="contacts-side-cta">
+          <a href="https://wa.me/79937715388" target="_blank" rel="noopener">Написать в&nbsp;WhatsApp</a>
+          <a href="https://t.me/alaturpro" target="_blank" rel="noopener">Написать в&nbsp;Telegram</a>
+          <button type="button" data-open-dialog="presentation">Получить презентацию</button>
+        </div>
+      </div>
+
+      <div class="contacts-form-card">
+        <h3>Оставьте заявку</h3>
+        <p class="form-sub">Мы&nbsp;вернёмся к&nbsp;вам в&nbsp;течение рабочего дня с&nbsp;первичным предложением и&nbsp;вариантами сопровождения.</p>
+        <form class="contacts-form" novalidate>
+          <div class="contacts-form-field">
+            <label class="contacts-form-label" for="contact-name">Имя</label>
+            <input class="contacts-form-input" type="text" id="contact-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="contacts-form-field">
+            <label class="contacts-form-label" for="contact-company">Компания / организация</label>
+            <input class="contacts-form-input" type="text" id="contact-company" name="company" autocomplete="organization">
+          </div>
+          <div class="contacts-form-field">
+            <label class="contacts-form-label" for="contact-country">Страна</label>
+            <input class="contacts-form-input" type="text" id="contact-country" name="country" autocomplete="country-name">
+          </div>
+          <div class="contacts-form-field">
+            <label class="contacts-form-label" for="contact-phone">Телефон / WhatsApp</label>
+            <input class="contacts-form-input" type="tel" id="contact-phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="contacts-form-field full">
+            <label class="contacts-form-label" for="contact-email">Email</label>
+            <input class="contacts-form-input" type="email" id="contact-email" name="email" autocomplete="email" required>
+          </div>
+          <div class="contacts-form-field full">
+            <label class="contacts-form-label" for="contact-type">Тип запроса</label>
+            <select class="contacts-form-select" id="contact-type" name="type">
+              <option value="">Выберите направление</option>
+              <option>Премиальные путешествия</option>
+              <option>Научно-образовательные программы</option>
+              <option>Медицинские и оздоровительные программы</option>
+              <option>Business Leisure / деловой туризм</option>
+              <option>MICE &amp; Events</option>
+              <option>Семейные путешествия</option>
+              <option>Событийный туризм</option>
+              <option>Партнёрство</option>
+              <option>Другое</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary full">
+            Отправить заявку
+            <span class="btn-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 17 L17 7"/>
+                <path d="M8.5 7 H17 V15.5"/>
+              </svg>
+            </span>
+          </button>
+        </form>
+        <p class="contacts-trust">
+          <span class="marker">Международный туроператор</span>
+          <span class="marker">BRICS</span>
+          <span class="marker">Premium Travel</span>
+          <span class="marker">MICE &amp;&nbsp;Events</span>
+          <span class="marker">Авторские маршруты</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" aria-label="Подвал сайта">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <img src="./alatur-logo-transparent.svg" alt="ALATUR International Travel Operator">
+        <p class="footer-positioning">
+          ALATUR&nbsp;— международный туроператор премиальных путешествий, business &amp;&nbsp;MICE, научно-образовательных, медицинских и&nbsp;wellness-программ в&nbsp;России и&nbsp;странах БРИКС.
+        </p>
+      </div>
+
+      <div class="footer-col footer-nav">
+        <h4>Навигация</h4>
+        <a href="#about">О&nbsp;компании</a>
+        <a href="#destinations">Направления</a>
+        <a href="#tours">Туры и&nbsp;программы</a>
+        <a href="#mice">MICE &amp;&nbsp;Events</a>
+        <a href="#journal">Журнал</a>
+        <a href="#partners">Партнёры</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+
+      <div class="footer-col footer-contacts">
+        <h4>Контакты</h4>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <a href="tel:+79649403896">+7&nbsp;964&nbsp;940-38-96</a>
+        </div>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3 6 L12 13 L21 6"/></svg>
+          <a href="mailto:info@alatur.pro">info@alatur.pro</a>
+        </div>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-1-2.4-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.7.7 2.4.8 3.3.7.5-.1 1.8-.7 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.4ZM12 2.5C6.7 2.5 2.5 6.7 2.5 12c0 1.7.4 3.3 1.3 4.7L2.5 21.5l4.9-1.3c1.3.7 2.9 1.1 4.6 1.1 5.3 0 9.5-4.2 9.5-9.5S17.3 2.5 12 2.5Z"/></svg>
+          <a href="https://wa.me/79937715388" target="_blank" rel="noopener">+7&nbsp;993&nbsp;771-53-88</a>
+        </div>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.85-.7 1.06-1.43.66L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+          <a href="https://t.me/alaturpro" target="_blank" rel="noopener">@alaturpro</a>
+        </div>
+      </div>
+
+      <div class="footer-col footer-legal">
+        <h4>Юридическая информация</h4>
+        <p class="reg-line">Официальный туроператор<br>В&nbsp;Едином федеральном реестре туроператоров РФ № 116774</p>
+        <p class="org-line">ООО «АЛАТУР»<br>ИНН 2366048791 · ОГРН 1242300028332</p>
+        <a href="#privacy">Политика конфиденциальности</a>
+        <a href="#terms">Пользовательское соглашение</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 ALATUR. Все права защищены.</span>
+      <span class="footer-lang">
+        <span class="active">RU</span>
+        <span class="sep">/</span>
+        <a href="#">EN</a>
+        <span class="sep">/</span>
+        <a href="#">AR</a>
+      </span>
+    </div>
+  </footer>
+
   <script>
     (function () {
       var burger = document.querySelector('.burger');
@@ -2480,6 +3234,19 @@
         form.reset();
         dialog.close();
         window.alert('Спасибо! Презентация будет отправлена на ваш email или WhatsApp в течение часа.');
+      });
+    })();
+
+    (function () {
+      var form = document.querySelector('.contacts-form');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = form.querySelector('#contact-name').value.trim();
+        var email = form.querySelector('#contact-email').value.trim();
+        if (!name || !email) return;
+        form.reset();
+        window.alert('Спасибо за заявку! Мы вернёмся к вам в течение рабочего дня.');
       });
     })();
   </script>
