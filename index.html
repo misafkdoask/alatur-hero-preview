@@ -1338,6 +1338,80 @@
       opacity: 0.7;
     }
 
+    /* ===== Block 7 - Партнёры ===== */
+    .section-partners {
+      background:
+        radial-gradient(ellipse 55% 60% at 88% 12%, rgba(208, 188, 152, 0.22) 0%, rgba(208, 188, 152, 0) 70%),
+        radial-gradient(ellipse 60% 65% at 8% 88%, rgba(195, 170, 130, 0.18) 0%, rgba(195, 170, 130, 0) 70%),
+        var(--cream);
+      padding: clamp(3.5rem, 6vw, 6rem) 0;
+    }
+    .partners-heading {
+      max-width: 50rem;
+      margin: 0 auto clamp(2.4rem, 4vw, 3.4rem);
+      text-align: center;
+      padding: 0 var(--pad-x);
+    }
+    .partners-heading .eyebrow {
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .partners-headline {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.008em;
+      color: var(--ink);
+      margin: 0 0 0.9rem;
+    }
+    .partners-subtitle {
+      font-size: clamp(0.96rem, 1.04vw, 1.1rem);
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ink-body);
+      margin: 0 auto;
+      max-width: 46rem;
+    }
+    .partners-row {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+    }
+    .partner-tile {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1rem, 1.6vw, 1.4rem);
+      transition: background 0.25s var(--ease);
+    }
+    .partner-tile:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 18%;
+      bottom: 18%;
+      width: 1px;
+      background: var(--line);
+    }
+    .partner-tile img {
+      max-width: 100%;
+      max-height: 70%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: grayscale(0.85) opacity(0.7);
+      transition: filter 0.3s var(--ease), transform 0.3s var(--ease);
+    }
+    .partner-tile:hover img {
+      filter: grayscale(0) opacity(1);
+      transform: scale(1.04);
+    }
+
     /* ===== Block 8 - Журнал ALATUR ===== */
     .section-journal {
       background:
@@ -1580,6 +1654,22 @@
       .quote-media { max-width: 22rem; aspect-ratio: 4 / 5; }
       .quote-text { font-size: clamp(1.2rem, 5vw, 1.6rem); }
 
+      /* Block 7 mobile */
+      .partners-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .partner-tile:nth-child(2n)::after { display: none; }
+      .partner-tile:nth-child(-n+6)::before {
+        content: '';
+        position: absolute;
+        left: 18%;
+        right: 18%;
+        bottom: 0;
+        height: 1px;
+        background: var(--line);
+      }
+      .partners-headline { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+
       /* Block 8 mobile */
       .journal-grid {
         grid-template-columns: 1fr;
@@ -1594,6 +1684,19 @@
     }
 
     @media (min-width: 901px) and (max-width: 1180px) {
+      .partners-row {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .partner-tile:nth-child(4n)::after { display: none; }
+      .partner-tile:nth-child(-n+4)::before {
+        content: '';
+        position: absolute;
+        left: 18%;
+        right: 18%;
+        bottom: 0;
+        height: 1px;
+        background: var(--line);
+      }
       .journal-grid {
         grid-template-columns: repeat(4, 1fr);
       }
@@ -2135,16 +2238,48 @@
     </div>
   </section>
 
-  <section class="section-destinations-stub" id="partners" aria-labelledby="partners-stub-title">
-    <div class="stub-inner">
-      <div class="stub-eyebrow">
+  <section class="section-partners" id="partners" aria-labelledby="partners-headline">
+    <header class="partners-heading">
+      <div class="eyebrow">
         <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M12 0 L13.4 9 L22 11 L13.4 13.5 L12 24 L10.6 13.5 L2 11 L10.6 9 Z M12 4 L18 12 L12 20 L6 12 Z" fill-rule="evenodd"/>
         </svg>
         <span>Партнёры</span>
       </div>
-      <h2 id="partners-stub-title" class="stub-title">Карусель логотипов партнёров</h2>
-      <p class="stub-note">Ждём логотипы от&nbsp;клиента</p>
+      <h2 id="partners-headline" class="partners-headline">Наши партнёры</h2>
+      <p class="partners-subtitle">
+        Международные палаты, региональные институции и&nbsp;премиальные операторы туристической индустрии.
+      </p>
+    </header>
+
+    <div class="partners-row" aria-label="Логотипы партнёров ALATUR">
+      <div class="partner-tile" title="Российско-Китайская палата">
+        <img src="./block-7/out/rus-china-chamber.png" alt="Российско-Китайская палата по содействию торговле машинно-технической и инновационной продукцией" loading="lazy">
+      </div>
+      <div class="partner-tile" title="Общество Российско-Китайской дружбы">
+        <img src="./block-7/out/rus-china-friendship.png" alt="Общество Российско-Китайской дружбы" loading="lazy">
+      </div>
+      <div class="partner-tile" title="Город Сочи">
+        <img src="./block-7/out/sochi.png" alt="Город Сочи" loading="lazy">
+      </div>
+      <div class="partner-tile" title="Краснодарский край">
+        <img src="./block-7/out/krasnodar-krai.jpg" alt="Краснодарский край" loading="lazy">
+      </div>
+      <div class="partner-tile" title="Hyatt Regency">
+        <img src="./block-7/out/hyatt-regency.png" alt="Hyatt Regency" loading="lazy">
+      </div>
+      <div class="partner-tile" title="Skypark Sochi">
+        <img src="./block-7/out/skypark.png" alt="Skypark Sochi" loading="lazy">
+      </div>
+      <div class="partner-tile" title="Горки Город">
+        <img src="./block-7/out/gorki-gorod.png" alt="Горки Город" loading="lazy">
+      </div>
+      <div class="partner-tile" title="ICISTE">
+        <img src="./block-7/out/iciste.png" alt="ICISTE — International Centre for Innovations in Science, Technology and Education" loading="lazy">
+      </div>
+      <div class="partner-tile" title="Международный фестиваль НАУКА 0+">
+        <img src="./block-7/out/nauka-festival.svg" alt="Международный фестиваль НАУКА 0+, 20 лет" loading="lazy">
+      </div>
     </div>
   </section>
 
