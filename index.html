@@ -1378,9 +1378,15 @@
       margin: 0 auto;
       padding: 0 var(--pad-x);
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: clamp(1.6rem, 2.4vw, 2.2rem);
     }
+    .journal-card {
+      grid-column: span 2;
+    }
+    /* 5-card layout: center last row's 2 cards */
+    .journal-card:nth-child(4) { grid-column: 2 / span 2; }
+    .journal-card:nth-child(5) { grid-column: 4 / span 2; }
     .journal-card {
       display: flex;
       flex-direction: column;
@@ -1579,13 +1585,21 @@
         grid-template-columns: 1fr;
         gap: 1.4rem;
       }
+      .journal-card,
+      .journal-card:nth-child(4),
+      .journal-card:nth-child(5) {
+        grid-column: 1 / -1;
+      }
       .journal-headline { font-size: clamp(1.7rem, 7vw, 2.2rem); }
     }
 
     @media (min-width: 901px) and (max-width: 1180px) {
       .journal-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
       }
+      .journal-card { grid-column: span 2; }
+      .journal-card:nth-child(4) { grid-column: 1 / span 2; }
+      .journal-card:nth-child(5) { grid-column: 3 / span 2; }
     }
   </style>
 </head>
@@ -2185,14 +2199,14 @@
         </div>
       </a>
 
-      <a class="journal-card" href="https://t.me/alaturprovip/64" target="_blank" rel="noopener">
-        <div class="journal-card-thought">
-          <p class="journal-card-thought-text">Настоящая роскошь&nbsp;— это когда её&nbsp;не&nbsp;видно</p>
+      <a class="journal-card" href="https://t.me/alaturprovip/19" target="_blank" rel="noopener">
+        <div class="journal-card-media">
+          <img src="./block-8/out/article-sirius.jpg" alt="Церемония награждения международных участников Сириуса" loading="lazy">
         </div>
         <div class="journal-card-content">
-          <p class="journal-card-date">28 марта 2026</p>
-          <h3 class="journal-card-title">Тихая роскошь: настоящий премиум-туризм</h3>
-          <p class="journal-card-excerpt">Премиальный туризм сегодня&nbsp;— не&nbsp;про показ, а&nbsp;про комфорт, приватность и&nbsp;продуманность. То, за&nbsp;что действительно платят.</p>
+          <p class="journal-card-date">11 января 2026</p>
+          <h3 class="journal-card-title">Сириус: когда путешествие становится знанием</h3>
+          <p class="journal-card-excerpt">Федеральная территория Сириус, пространство науки, образования и&nbsp;культуры, где формируется новая модель научно-познавательного туризма для международных партнёров.</p>
           <span class="journal-card-link">Подробнее</span>
         </div>
       </a>
@@ -2205,18 +2219,6 @@
           <p class="journal-card-date">17 марта 2026</p>
           <h3 class="journal-card-title">Кавказ весной: маршруты для путешественников</h3>
           <p class="journal-card-excerpt">Пять мест Северного Кавказа, которые открываются для премиальных путешествий в&nbsp;марте и&nbsp;апреле.</p>
-          <span class="journal-card-link">Подробнее</span>
-        </div>
-      </a>
-
-      <a class="journal-card" href="https://t.me/alaturprovip/71" target="_blank" rel="noopener">
-        <div class="journal-card-thought">
-          <p class="journal-card-thought-text">Самое важное происходит не&nbsp;снаружи, а&nbsp;внутри</p>
-        </div>
-        <div class="journal-card-content">
-          <p class="journal-card-date">7 апреля 2026</p>
-          <h3 class="journal-card-title">Места силы: путешествия за&nbsp;тишиной</h3>
-          <p class="journal-card-excerpt">Старые храмы, тишина, мерцание свечей. В&nbsp;таких местах человек ищет не&nbsp;новые впечатления, а&nbsp;возможность услышать себя.</p>
           <span class="journal-card-link">Подробнее</span>
         </div>
       </a>
